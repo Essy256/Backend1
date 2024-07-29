@@ -28,7 +28,7 @@ const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODBLINK,)
     {useNewUrIParser:true}
     //parsing error
-).then(
+).then (
 ()=>{console.log('connected to the DB')}
 
 ).Catch (err=>{

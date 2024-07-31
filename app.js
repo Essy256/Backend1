@@ -1,18 +1,26 @@
 const express = require ('express');
+const mongoose = require('mongoose');
+require('dotenv/config')
 
 const app = express();
 const port = 4000
+
+// const postRoute = require('./routes/post')
+
+// app.use('/posts', postRoute)
+
+// use - middleware
 
 app.get('/',(req,res) =>{
     res.send('we are the code queen')
 })
 
-app.listen(process.env.PORT,()=>{
-console.log(`server runing on port ${port}`)
+app.listen(process.env.port,()=>{
+console.log(`server runing on port ${process.env.port}`)
 
 })
 
-require(dotenv/config)
+
 
 //function student(req,res){
 //console.log(req+res)
@@ -23,19 +31,15 @@ require(dotenv/config)
 
 //(req,res)=>{console.log(req+res)}
 
-const mongoose = require('mongoose');
+
 
 //CONNECT TO THE DATABASE
-mongoose.connect(process.env.MONGODBLINK,)
-    {useNewUrIParser:true}
-    //parsing error
-).then (
+mongoose.connect(process.env.MONGODBLINK)
+    .then (
 ()=>{console.log('connected to the DB')}
 
-).Catch (err=>{
+).catch (err=>{
     console.log('error connecting to the DB',err)
-
-    app
 
 
 })

@@ -2,11 +2,7 @@ const express = require ('express');
 const mongoose = require('mongoose');
 require('dotenv/config')
 const routes = require ('./routes')
-
 const app = express();
-const port = 4000
-
-
 // MIDDLEWARE
 app.use('/api',routes)
 

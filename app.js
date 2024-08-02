@@ -1,21 +1,14 @@
 const express = require ('express');
 const mongoose = require('mongoose');
 require('dotenv/config')
-const routes = require ('/routes')
+const routes = require ('./routes')
 
 const app = express();
 const port = 4000
 
-// const postRoute = require('./routes/post')
-
-// app.use('/posts', postRoute)
 
 // MIDDLEWARE
-app.use('/api/',routes,)
-
-app.get('/',(req,res) =>{
-    res.send('we are the code queen')
-})
+app.use('/api',routes)
 
 app.listen(process.env.port,()=>{
 console.log(`server runing on port ${process.env.port}`)

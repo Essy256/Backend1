@@ -1,10 +1,16 @@
 const express = require ('express');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser')
 require('dotenv/config')
 const routes = require ('./routes')
-const app = express();
+// Importing the routes
+
+const app = express();//creating an express app
+
 // MIDDLEWARE
+app.use(bodyParser.json())
 app.use('/api',routes)
+
 
 app.listen(process.env.port,()=>{
 console.log(`server runing on port ${process.env.port}`)
